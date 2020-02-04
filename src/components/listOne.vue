@@ -21,9 +21,9 @@ export default {
     //   }
     // },
     computed: {
-        ...mapState([
-            'productList'
-        ]),
+        // ...mapState([
+        //     'productList'
+        // ]),
         ...mapGetters([
             'getProductList',
             'getShopList',
