@@ -37,6 +37,7 @@ export default {
         // reducePriceAsync(){
         //     this.$store.dispatch('reducePriceAsync', 2)
         // },
+        // this.$store.commit(mutationName)是用来触发一个mutation的方法
         ...mapMutations([
             'reducePrice'
         ]),
