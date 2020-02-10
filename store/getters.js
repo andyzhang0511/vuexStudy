@@ -6,12 +6,14 @@ const getters = {
         return state.shopList;
     },
     getSaledPrice: state => {
-        let saleProduct = state.productList.map((item,index) => {
+        localStorage.getItem('ceshi') ? 
+        state.productList = JSON.parse(localStorage.getItem('ceshi')) : ''
+        let saleProduct = state.productList.map(item => {
             // item.price = localStorage.getItem('ceshi'+index)
             console.log(item.price)
             return {
                 name: "**" + item.name + "**",
-                price: localStorage.getItem('ceshi'+index) / 2
+                price: item.price / 2
             };
         });
         return saleProduct;
