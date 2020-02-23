@@ -1,14 +1,18 @@
 <template>
   <div class="list-one">
     <h1>list one</h1>
+    <p v-for="(item,index) in productList" :key="index">{{item}}</p>
     <ul>
       <li v-for="(product, index) in getSaledPrice" :key="index">
         <p>名称：{{product.name}}</p>
         <p>价格：{{product.price}}</p>
       </li>
     </ul>
-    <button @click="reducePrice(4)">降价</button>
-    <button @click="reducePriceAsync(4)">异步降价</button>
+    <button @click="reducePrice">降价</button>
+    <button @click="reducePriceAsync">异步降价</button>
+
+    <!-- <button @click="reducePrice(4)">降价</button>
+    <button @click="reducePriceAsync(4)">异步降价</button> -->
   </div>
 </template>
 
@@ -25,15 +29,15 @@ export default {
     ...mapGetters(["getProductList", "getShopList", "getSaledPrice"])
   },
   methods: {
-    // reducePrice(){
-    //     this.$store.commit('reducePrice', 2)
-    // },
-    // reducePriceAsync(){
-    //     this.$store.dispatch('reducePriceAsync', 2)
-    // }
+    reducePrice(){
+        this.$store.commit('reducePrice', 2)
+    },
+    reducePriceAsync(){
+        this.$store.dispatch('reducePriceAsync', 2)
+    }
     // this.$store.commit(mutationName)是用来触发一个mutation的方法
-    ...mapMutations(["reducePrice"]),
-    ...mapActions(["reducePriceAsync"])
+    // ...mapMutations(["reducePrice"]),
+    // ...mapActions(["reducePriceAsync"])
   },
   mounted() {}
 };

@@ -1,10 +1,12 @@
 const getters = {
+    // 为listTwo服务
     getProductList: state => {
         return state.productList;
     },
     getShopList: state => {
         return state.shopList;
     },
+    // 为listOne服务
     getSaledPrice: state => {
         localStorage.getItem('ceshi') ? 
         state.productList = JSON.parse(localStorage.getItem('ceshi')) : ''
