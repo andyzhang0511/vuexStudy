@@ -16,8 +16,8 @@ export default {
     };
   },
   beforeCreate() {
-    this.bus.$on("toBrother111", msg => {
-      this.getMsg = msg;
+    this.bus.$on("toBrother111", val => {
+      this.getMsg = val;
     });
   },
   methods: {
